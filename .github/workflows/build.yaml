@@ -16,9 +16,10 @@ jobs:
     - name: Clone destination files
       uses: actions/checkout@v6
       with:
-        repository: 7GrandDadPGN/VapeCompiled
-        token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
-        path: "./VapeCompiled"
+        repository: Creebly/idk
+        token: ${{ github.token }}
+        path: './compiled'
+        ref: compiled
 
     - name: Clone bundler
       uses: actions/checkout@v6
@@ -49,7 +50,7 @@ jobs:
 
     - name: Push commit
       run: |-
-        cd ./VapeCompiled
+        cd ./compiled
         git add .
         git commit -m "Updated Vape"
         git push origin
